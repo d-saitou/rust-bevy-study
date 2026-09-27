@@ -1,0 +1,56 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { // フォーマッタ
+      "label": "Rust: fmt",
+      "type": "shell",
+      "command": "cargo fmt",
+      "problemMatcher": []
+    },
+    { // 静的解析
+      "label": "Rust: clippy",
+      "type": "shell",
+      "command": "cargo clippy -- -D warnings",
+      "problemMatcher": []
+    },
+    { // フォーマッタ + 静的解析
+      "label": "Rust: fmt + clippy",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Rust: fmt",
+        "Rust: clippy"
+      ],
+      "problemMatcher": []
+    },
+    { // コンパイルチェック
+      "label": "Rust: check",
+      "type": "shell",
+      "command": "cargo check",
+      "problemMatcher": []
+    },
+    { // ビルド
+      "label": "Rust: build",
+      "type": "shell",
+      "command": "cargo build",
+      "problemMatcher": []
+    },
+    { // ビルド＋実行
+      "label": "Rust: run",
+      "type": "shell",
+      "command": "cargo run",
+      "problemMatcher": []
+    },
+    { // ビルド(リリース用)
+      "label": "Rust: build release",
+      "type": "shell",
+      "command": "cargo build --release",
+      "problemMatcher": []
+    },
+    { // ビルド＋実行(リリース用)
+      "label": "Rust: run release",
+      "type": "shell",
+      "command": "cargo run --release",
+      "problemMatcher": []
+    }
+  ]
+}
